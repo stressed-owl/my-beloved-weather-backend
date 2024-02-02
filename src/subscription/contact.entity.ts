@@ -1,21 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class Subscription {
+export class Contact {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @Column()
-  card: string;
-
-  @Column()
-  valid: string;
-
-  @Column()
-  cvv: string;
-
-  @Column()
-  country: string;
 
   @Column()
   name: string;
@@ -25,4 +13,9 @@ export class Subscription {
 
   @Column()
   phone: string;
+
+  @Column({
+    type: 'text',
+  })
+  message: string;
 }
