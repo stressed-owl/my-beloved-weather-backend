@@ -1,15 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
-const PORT = 3012;
-
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: false });
-  app
-    .listen(PORT)
-    .then(() => {
-      console.log(`The server is running on ${PORT}`);
-    })
-    .catch((error) => console.log(error));
+  const app = await NestFactory.create(AppModule, { cors: true });
+
+  app.enableCors({ origin: false });
+
+  await app
+    .listen(3002)
+    .then(() => console.log('successfully started on port 3002'))
+    .catch((e) => console.log('something went wrong!!!!!', e));
 }
 bootstrap();

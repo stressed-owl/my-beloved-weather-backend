@@ -9,4 +9,4 @@ import { ContactController } from './contact.controller';
   providers: [ContactService],
   controllers: [ContactController],
 })
-export class SubscriptionModule {}
+export class ContactModule {}

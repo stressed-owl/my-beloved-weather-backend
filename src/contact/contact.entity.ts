@@ -5,17 +5,23 @@ export class Contact {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    default: '',
+  })
   name: string;
 
-  @Column()
+  @Column({
+    default: '',
+  })
   email: string;
 
-  @Column()
+  @Column({
+    default: '',
+  })
   phone: string;
 
   @Column({
-    type: 'text',
+    default: '',
   })
   message: string;
 }

@@ -10,8 +10,7 @@ export class ContactService {
     private contactRepository: Repository<Contact>,
   ) {}
 
-  async create(contact: Contact): Promise<any> {
-    this.contactRepository.save(contact);
-    return 'contact form was sent successfully';
+  async create(contact: Contact): Promise<Contact> {
+    return this.contactRepository.save(contact);
   }
 }
